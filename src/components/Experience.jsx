@@ -32,7 +32,7 @@ const Experience = () => {
     <section className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-5xl md:text-7xl font-extrabold text-center mb-16 bg-gradient-to-b from-gray-500 via-gray-300 to-white bg-clip-text text-transparent">
-          Experiences & Involvement
+          Experience & Involvement
         </h2>
         <div className="relative flex flex-col items-center w-full max-w-3xl mx-auto">
           {/* Glowing vertical stepper */}
