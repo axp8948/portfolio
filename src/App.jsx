@@ -5,6 +5,7 @@ import Skills from './components/Skills'
 import Education from './components/Education'
 import Experience from './components/Experience'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <section id="education"><Education /></section>
       <section id="experience"><Experience /></section>
       <section id="contact"><Contact /></section>
+      <Footer />
     </>
   )
 }
