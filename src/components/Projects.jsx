@@ -1,45 +1,58 @@
 import React from 'react';
+import prodifyThumb from '../assets/screenshots/prodify_thumb.png';
+import whiteCoatAIThumb from '../assets/screenshots/whitecoatai_thumb.png';
+import healthCostAIThumb from '../assets/screenshots/healthcost_ai_predictor.png';
 
 const projects = [
   {
-    title: 'Project One',
-    description: 'A short description of the project.',
-    image: 'https://picsum.photos/400/200',
-    link: 'https://example.com/project-one',
-    linkLabel: 'Live Demo',
+    title: 'Prodify',
+    description: 'Personalized productivity app to track daily activities, notes, and goals with an AI chatbot.',
+    image: prodifyThumb,
+    live: 'https://the-prodify.com/',
+    github: 'https://github.com/axp8948/prodify',
   },
   {
-    title: 'Project Two',
-    description: 'A short description of the project.',
-    image: 'https://picsum.photos/400/201',
-    link: 'https://example.com/project-two',
-    linkLabel: 'Live Demo',
+    title: 'WhiteCoatAI',
+    description: 'AI agent that simplifies medical documents for everyone, with summaries, charts, and chat.',
+    image: whiteCoatAIThumb,
+    live: 'https://whitecoatai.tech',
+    github: 'https://github.com/axp8948/whiteCoatAI',
   },
   {
-    title: 'Project Three',
-    description: 'A short description of the project.',
-    image: 'https://picsum.photos/400/202',
-    link: 'https://example.com/project-three',
-    linkLabel: 'Live Demo',
+    title: 'HealCost AI Predictor',
+    description: 'AI model trained on real data to predict health insurance costs and feature importance.',
+    image: healthCostAIThumb,
+    live: null,
+    github: 'https://github.com/axp8948/finhack-healthCostPredictor',
   },
 ];
 
-const ProjectCard = ({ title, description, image, link, linkLabel }) => (
-  <div className="relative flex flex-col items-center group" style={{ perspective: '1200px' }}>
-    {/* Floating Link & Line (only on hover) */}
-    <div className="absolute -top-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center pointer-events-none">
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="px-4 py-1 rounded-full bg-black/80 text-white font-mono text-base shadow-lg border border-gray-200/30 transition-all duration-300 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-auto"
-        style={{ transitionProperty: 'opacity, transform' }}
-      >
-        <span className="font-bold">{linkLabel}</span>
-      </a>
-      {/* Vertical Line */}
-      <div className="w-0.5 h-0 bg-cyan-300/70 mt-1 transition-all duration-300 group-hover:h-8 group-hover:mt-2" />
-    </div>
+const ProjectCard = ({ title, description, image, live, github }) => (
+  <div
+    className="relative flex flex-col items-center group cursor-pointer"
+    style={{ perspective: '1200px' }}
+    onClick={() => live && window.open(live, '_blank')}
+    tabIndex={0}
+    role="button"
+    onKeyPress={e => {
+      if (e.key === 'Enter' && live) window.open(live, '_blank');
+    }}
+  >
+    {/* Floating Link & Line (only on hover, only if live link exists) */}
+    {live && (
+      <div className="absolute -top-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center pointer-events-none">
+        <a
+          href={live}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-4 py-1 rounded-full bg-black/80 text-white font-mono text-base shadow-lg border border-gray-200/30 hover:bg-black/90 transition-colors duration-200 pointer-events-auto"
+          onClick={e => e.stopPropagation()}
+        >
+          <span className="font-bold">Live Demo</span>
+        </a>
+        <div className="w-0.5 h-6 bg-cyan-300/70 mt-1" />
+      </div>
+    )}
     {/* Card */}
     <div
       className="bg-zinc-800/60 rounded-2xl overflow-hidden shadow-2xl -translate-y-1 border border-gray-200/30 transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_8px_32px_rgba(0,255,255,0.10)]"
@@ -61,7 +74,13 @@ const ProjectCard = ({ title, description, image, link, linkLabel }) => (
           {title}
         </h3>
         <p className="text-white italic mb-4">{description}</p>
-        <a href={link} target="_blank" rel="noopener noreferrer" className="text-[#6b3f26] hover:text-[#a0522d] hover:underline">
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#6b3f26] hover:text-[#a0522d] hover:underline pointer-events-auto"
+          onClick={e => e.stopPropagation()}
+        >
           View Project
         </a>
       </div>
