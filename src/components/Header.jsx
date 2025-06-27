@@ -1,19 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 
 const navLinks = [
   { name: 'Home', to: 'home' },
   { name: 'Projects', to: 'projects' },
+  { name: 'Skills', to: 'skills' },
+  { name: 'Education', to: 'education' },
   { name: 'Experience', to: 'experience' },
   { name: 'Contact', to: 'contact' },
 ];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY < 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-4 left-0 w-full z-50 pointer-events-none">
-      <nav className="flex items-center justify-between px-8 py-4 bg-black/20 backdrop-blur-md border-b border-white/10 rounded-2xl mx-4 max-w-5xl mx-auto pointer-events-auto shadow-2xl -translate-y-1 transition-all duration-300">
+    <header className="fixed top-0 left-0 w-full z-50 pointer-events-none transition-all duration-300">
+      <nav
+        className={`flex items-center justify-between px-8 ${isAtTop ? 'py-8' : 'py-4'} bg-black/20 backdrop-blur-md border-b border-white/10 rounded-2xl mx-4 max-w-5xl mx-auto pointer-events-auto shadow-2xl -translate-y-1 transition-all duration-300 ${isAtTop ? 'w-[98vw] max-w-[98vw] mt-4' : ''}`}
+        style={{
+          transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+        }}
+      >
         <div className="text-2xl font-bold tracking-wide cursor-pointer bg-gradient-to-b from-gray-500 via-gray-300 to-white bg-clip-text text-transparent">
           Anmol Pandey
         </div>
@@ -50,6 +66,7 @@ const Header = () => {
                 className="text-white font-semibold cursor-pointer hover:text-accent transition-colors"
                 activeClass="text-accent"
                 spy={true}
+                onClick={() => setMenuOpen(false)}
               >
                 {link.name}
               </Link>
