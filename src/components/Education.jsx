@@ -19,6 +19,8 @@ const educationData = [
   },
 ];
 
+const CARD_WIDTH = 'max-w-xl';
+
 const Education = () => {
   return (
     <section className="py-20">
@@ -26,39 +28,32 @@ const Education = () => {
         <h2 className="text-5xl md:text-7xl font-extrabold text-center mb-16 bg-gradient-to-b from-gray-500 via-gray-300 to-white bg-clip-text text-transparent">
           Education
         </h2>
-        <div className="relative flex flex-col items-center">
-          {/* Vertical timeline line */}
-          <div className="absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-cyan-400/60 via-cyan-300/30 to-transparent rounded-full shadow-lg" style={{ transform: 'translateX(-50%)', zIndex: 0 }} />
-          <div className="space-y-24 w-full max-w-2xl z-10">
-            {educationData.map((edu, idx) => (
-              <div key={idx} className="relative flex flex-col items-center group">
-                {/* 3D Card Node */}
-                <div
-                  className="bg-zinc-800/60 border border-gray-200/30 rounded-2xl shadow-2xl px-8 py-8 w-full transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_8px_32px_rgba(0,255,255,0.10)]"
-                  style={{
-                    transformStyle: 'preserve-3d',
-                    transform: 'rotateY(-8deg) rotateX(6deg)',
-                  }}
-                >
-                  <h3 className="text-2xl md:text-3xl font-extrabold mb-2 bg-gradient-to-b from-gray-500 via-gray-300 to-white bg-clip-text text-transparent">
-                    {edu.school}
-                  </h3>
-                  <div className="text-lg md:text-xl font-semibold text-gray-300 mb-1">{edu.location}</div>
-                  <div className="text-lg md:text-xl font-semibold mb-1">
-                    <span className="bg-gradient-to-b from-gray-500 via-gray-300 to-white bg-clip-text text-transparent">
-                      {edu.degree}
-                    </span>
-                    {', GPA '}
-                    <span className="bg-gradient-to-b from-gray-500 via-gray-300 to-white bg-clip-text text-transparent">{edu.gpa}</span>
-                  </div>
-                  <div className="text-gray-400 mb-1">{edu.dates}</div>
-                  <div className="text-cyan-200 font-mono">{edu.activities}</div>
+        <div className="flex flex-col items-center w-full max-w-3xl mx-auto space-y-16">
+          {educationData.map((edu, idx) => (
+            <div key={idx} className="flex flex-col items-center w-full">
+              <div
+                className={`relative bg-zinc-800/60 border border-gray-200/30 rounded-2xl shadow-2xl px-8 py-8 w-full ${CARD_WIDTH} transition-all duration-500 group hover:shadow-[0_0_32px_0_rgba(34,211,238,0.35)] hover:ring-2 hover:ring-cyan-400/60`}
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transform: 'rotateY(-8deg) rotateX(6deg)',
+                }}
+              >
+                <h3 className="text-2xl md:text-3xl font-extrabold mb-2 bg-gradient-to-b from-gray-500 via-gray-300 to-white bg-clip-text text-transparent">
+                  {edu.school}
+                </h3>
+                <div className="text-lg md:text-xl font-semibold text-gray-300 mb-1">{edu.location}</div>
+                <div className="text-lg md:text-xl font-semibold mb-1">
+                  <span className="bg-gradient-to-b from-gray-500 via-gray-300 to-white bg-clip-text text-transparent">
+                    {edu.degree}
+                  </span>
+                  {', GPA '}
+                  <span className="bg-gradient-to-b from-gray-500 via-gray-300 to-white bg-clip-text text-transparent">{edu.gpa}</span>
                 </div>
-                {/* Timeline dot */}
-                <div className="absolute left-1/2 top-full w-5 h-5 bg-cyan-300 border-4 border-zinc-900 rounded-full shadow-lg" style={{ transform: 'translate(-50%, -50%)', zIndex: 20, display: idx === educationData.length - 1 ? 'none' : 'block' }} />
+                <div className="text-gray-400 mb-1">{edu.dates}</div>
+                <div className="text-cyan-200 font-mono">{edu.activities}</div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
