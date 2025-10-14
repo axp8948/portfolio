@@ -2,7 +2,7 @@ import React from 'react';
 import prodifyThumb from '../assets/screenshots/prodify_thumb.png';
 import whiteCoatAIThumb from '../assets/screenshots/whitecoatai_thumb.png';
 import healthCostAIThumb from '../assets/screenshots/healthcost_ai_predictor.png';
-import mavThreadThumb from '../assets/screenshots/mavthread.png';
+import mavThreadThumb from '../assets/screenshots/mavThread.png';
 
 const projects = [
   {
