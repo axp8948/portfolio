@@ -2,6 +2,7 @@ import React from 'react';
 import prodifyThumb from '../assets/screenshots/prodify_thumb.png';
 import whiteCoatAIThumb from '../assets/screenshots/whitecoatai_thumb.png';
 import healthCostAIThumb from '../assets/screenshots/healthcost_ai_predictor.png';
+import mavThreadThumb from '../assets/screenshots/mavthread.png';
 
 const projects = [
   {
@@ -19,11 +20,11 @@ const projects = [
     github: 'https://github.com/axp8948/whiteCoatAI',
   },
   {
-    title: 'HealCost AI Predictor',
-    description: 'AI model trained on real data to predict health insurance costs and feature importance.',
-    image: healthCostAIThumb,
-    live: null,
-    github: 'https://github.com/axp8948/finhack-healthCostPredictor',
+    title: 'MavThread',
+    description: 'MavThread is a platform for students to share their ideas, communicate, and collaborate.',
+    image: mavThreadThumb,
+    live: 'https://github.com/axp8948/MavThread',
+    github: 'https://github.com/axp8948/MavThread',
   },
 ];
 

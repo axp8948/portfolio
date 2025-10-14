@@ -2,12 +2,12 @@ import React from 'react';
 
 const experiences = [
   {
-    icon: '🧪',
-    title: 'Research WorkShop – RobustSumm',
-    org: 'University of Texas at Arlington',
-    date: 'Feb 2025',
+    icon: '👨',
+    title: 'Math Tutor',
+    org: 'Learning Resource Center, UTA',
+    date: 'Aug 2025 - Present',
     location: 'Arlington, TX',
-    description: 'Analyzed summarization model robustness using adversarial test-time attacks.',
+    description: 'Tutored students in mathematics, providing personalized support and fostering a growth-focused environment.',
   },
   {
     icon: '👨‍🏫',
@@ -16,6 +16,14 @@ const experiences = [
     date: 'Jun–Jul 2025',
     location: 'Arlington, TX',
     description: 'Mentored high school students, coordinated daily operations, and fostered a safe, growth-focused environment.',
+  },
+  {
+    icon: '🧪',
+    title: 'Research WorkShop – RobustSumm',
+    org: 'University of Texas at Arlington',
+    date: 'Feb 2025',
+    location: 'Arlington, TX',
+    description: 'Analyzed summarization model robustness using adversarial test-time attacks.',
   },
   {
     icon: '💻',
