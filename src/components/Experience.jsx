@@ -10,6 +10,14 @@ const experiences = [
     description: 'Tutored students in mathematics, providing personalized support and fostering a growth-focused environment.',
   },
   {
+    icon: '👥',
+    title: 'Peer Mentor',
+    org: 'CodePath',
+    date: 'Aug 2025 - Dec 2025',
+    location: '',
+    description: 'Provided 1:1 technical mentorship to first-time CodePath students, leading monthly check-ins and improving coursework confidence and job readiness.',
+  },
+  {
     icon: '👨‍🏫',
     title: 'Summer Student Assistant',
     org: 'Upward Bound, UTA',
@@ -27,7 +35,7 @@ const experiences = [
   },
   {
     icon: '💻',
-    title: 'Hackathons – UTA Datathon, UTD Finhack',
+    title: 'Hackathons – UTA Datathon, UTD Finhack, HackUTD',
     org: '',
     date: '2024–2025',
     location: '',

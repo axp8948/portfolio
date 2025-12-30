@@ -3,7 +3,7 @@ import prodifyThumb from '../assets/screenshots/prodify_thumb.png';
 import whiteCoatAIThumb from '../assets/screenshots/whitecoatai_thumb.png';
 import healthCostAIThumb from '../assets/screenshots/healthcost_ai_predictor.png';
 import mavThreadThumb from '../assets/screenshots/mavThread.png';
-
+import mavParkThumb from '../assets/screenshots/mavParkThumb.png';
 const projects = [
   {
     title: 'Prodify',
@@ -25,6 +25,13 @@ const projects = [
     image: mavThreadThumb,
     live: 'https://github.com/axp8948/MavThread',
     github: 'https://github.com/axp8948/MavThread',
+  },
+  {
+    title: 'MavPark',
+    description: 'Smart parking assistant using computer vision and ML to detect real-time parking availability with analytics and heatmaps.',
+    image: mavParkThumb,
+    live: '',
+    github: 'https://github.com/axp8948/mavPark',
   },
 ];
 
@@ -69,7 +76,13 @@ const ProjectCard = ({ title, description, image, live, github }) => (
         e.currentTarget.style.transform = 'rotateX(0deg)';
       }}
     >
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
+      {image ? (
+        <img src={image} alt={title} className="w-full h-48 object-cover" />
+      ) : (
+        <div className="w-full h-48 bg-gradient-to-br from-cyan-900/40 via-zinc-800 to-zinc-900 flex items-center justify-center">
+          <span className="text-6xl">🚗</span>
+        </div>
+      )}
       <div className="p-6">
         <h3 className="text-2xl font-bold mb-2 bg-gradient-to-b from-gray-500 via-gray-300 to-white bg-clip-text text-transparent">
           {title}
