@@ -3,7 +3,7 @@ import prodifyThumb from '../assets/screenshots/prodify_thumb.png';
 import whiteCoatAIThumb from '../assets/screenshots/whitecoatai_thumb.png';
 import healthCostAIThumb from '../assets/screenshots/healthcost_ai_predictor.png';
 import mavThreadThumb from '../assets/screenshots/mavThread.png';
-import mavParkThumb from '../assets/screenshots/mavParkThumb.png';
+import mavParkThumb from '../assets/screenshots/MavParkThumb.png';
 const projects = [
   {
     title: 'Prodify',
